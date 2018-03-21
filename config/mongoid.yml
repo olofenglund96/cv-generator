@@ -166,3 +166,6 @@ production:
   sessions:
     default:
       uri: <%= ENV['MONGOLAB_URI'] %>
+  clients:
+    default:
+      uri: mongodb://heroku_2fg924hv:vjfenohmj3umah5v092v6bdvmk@ds121289.mlab.com:21289/heroku_2fg924hv
