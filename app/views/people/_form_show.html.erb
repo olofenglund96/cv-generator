@@ -1,5 +1,24 @@
 <% options = {class: "form-control", disabled:true}%>
 <%= disabled = @person.last_name.downcase == "Mildner".downcase %>
 <%= simple_form_for(@person, html: { class: 'form-horizontal' }) do |f| %>
+    <form>
+    <fieldset>
+    <legend>Fruit juice size</legend>
+    <p>
+      f.input :first_name type="radio" name="size" id="size_1" value="small">
+      <label for="size_1">:first_name</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_2" value="medium">
+      <label for="size_2">Medium</label>
+    </p>
+    <p>
+      <input type="radio" name="size" id="size_3" value="large">
+      <label for="size_3">Large</label>
+    </p>
+  </fieldset>
+</form>
 <%= f.input :first_name %>
   <% end %>
+
+ 
