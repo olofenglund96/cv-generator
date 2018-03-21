@@ -20,15 +20,13 @@
   </div>
 </div>
 -->
-<%= stylesheet_link_tag
-params[:controller] %>
-<div class="activate-cv">
+  <%= stylesheet_link_tag params[:controller] %>
 
 <div id="top">
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-			<img src="headshot.jpg" alt="Alan Smith" />
+		<%= image_tag("headshot.jpg") %>
 		</div>
 		
 		<div id="name">
@@ -38,8 +36,8 @@ params[:controller] %>
 		
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">joe@bloggs.com</a></li>
-				<li>w: <a href="http://www.bloggs.com">www.bloggs.com</a></li>
+				<li>email: <a href="mailto:joe@bloggs.com" target="_blank"><%= @cv.email %></a></li>
+				<li>w: <a href="http://www.bloggs.com">www.yourwebsite.com</a></li>
 				<li>m: 01234567890</li>
 			</ul>
 		</div>
@@ -54,7 +52,7 @@ params[:controller] %>
 				</div>
 				
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<p><%= @cv.personal_letter%></p>
 				</div>
 			</article>
 			<div class="clear"></div>
