@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :educations
 resources :cvs do 
   resources :experiences
+  resources :educations
 end
 root to: "cvs#index"
 

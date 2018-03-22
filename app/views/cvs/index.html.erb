@@ -18,6 +18,8 @@
       <th>&nbsp;</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
       
     </tr>
   </thead>
@@ -32,13 +34,17 @@
           <td><%= cv.first_name %></td>
           <td><%= cv.last_name %></td>
           <td><%= cv.email %></td>
-          <td><%= cv.personal_letter %></td>       
+          <td><%= cv.personal_letter[0..29]+" ..." %></td>       
           <td>
           <%= link_to "Show", cv_path(cv), class: "btn btn-default" %>
         </td>
         <td> <%= link_to "Add experience", new_cv_experience_path(cv) ,class:"btn btn-default"%></td>
           
           <td> <%= link_to "Show Experiences", cv_experiences_path(cv) ,class:"btn btn-default"%></td>
+
+            <td> <%= link_to "Add education", new_cv_education_path(cv) ,class:"btn btn-default"%></td>
+          
+          <td> <%= link_to "Show education", cv_educations_path(cv) ,class:"btn btn-default"%></td>
           <td>
             <%= button_to "Delete", cv_path(cv), method: :delete, data: { confirm: "Are you sure you wish to delete the CV of #{cv.first_name} #{cv.last_name}?" }, class: "btn btn-danger" %>
           </td>
