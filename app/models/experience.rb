@@ -1,7 +1,9 @@
 class Experience
   include Mongoid::Document
-  field :experience_1, type: String
-  field :experience_2, type: String
-  field :experience_3, type: String
-  embedded_in :cv
+  field :company, type: String
+  field :description, type:String;
+  field :start_date, type:Date;
+  field :end_date, type:Date;
+  embedded_in :cv, inverse_of: :experiences
+  validates :company, :start_date, :end_date, :description, presence: true
 end

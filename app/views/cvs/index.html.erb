@@ -6,7 +6,7 @@
 <% if flash[:notice] %>
   <div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
-<%= pluralize(2,"news") %>
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -16,6 +16,9 @@
       <th>Personal Letter</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -33,8 +36,11 @@
           <td>
           <%= link_to "Show", cv_path(cv), class: "btn btn-default" %>
         </td>
+        <td> <%= link_to "Add experience", new_cv_experience_path(cv) ,class:"btn btn-default"%></td>
+          
+          <td> <%= link_to "Show Experiences", cv_experiences_path(cv) ,class:"btn btn-default"%></td>
           <td>
-            <%= button_to "Delete", cv, method: :delete, data: { confirm: "Are you sure you wish to delete the CV of #{cv.first_name} #{cv.last_name}?" }, class: "btn btn-danger" %>
+            <%= button_to "Delete", cv_path(cv), method: :delete, data: { confirm: "Are you sure you wish to delete the CV of #{cv.first_name} #{cv.last_name}?" }, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>

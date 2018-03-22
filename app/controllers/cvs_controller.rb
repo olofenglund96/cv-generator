@@ -22,7 +22,7 @@ class CvsController < ApplicationController
     @cv = Cv.find(params[:id])
     @cv.destroy
 
-    redirect_to people_path, notice: "#{:first_name} #{:last_name} has been deleted!" and return
+    redirect_to cvs_path, notice: "#{:first_name} #{:last_name} has been deleted!" and return
   end
 private
   def cv_params

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-resources :people
-resources :cvs
-
+resources :cvs do 
+  resources :experiences
+end
 root to: "cvs#index"
 
 

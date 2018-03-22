@@ -1,0 +1,31 @@
+<h1>Experiences</h1>
+<div class="well">
+<%= link_to "Back to CV overview", cvs_path ,class:"btn btn-primary"%>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Personal Letter</th>
+           
+    </tr>
+  </thead>
+  <tbody>
+    <% if @experiences.size == 0 %>
+      <tr>
+        <td colspan="6">No Cv:s found.</td>
+      </tr>
+    <% else %>
+      <% @experiences.each do |exp| %>
+        <tr>
+          <td><%= exp.company %></td>
+          <td><%= exp.description %></td>
+          <td><%= exp.start_date %></td>
+          <td><%= exp.end_date %></td>       
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
