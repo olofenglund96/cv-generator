@@ -1,19 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>School:</strong>
-  <%= @education.school %>
-</p>
-
-<p>
-  <strong>Subject:</strong>
-  <%= @education.subject %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @education.description %>
-</p>
-
-<%= link_to 'Edit', edit_education_path(@education) %> |
-<%= link_to 'Back', educations_path %>
+<h1>New Experience</h1>
+<div class="well">
+  <%= render "form" %>
+</div>

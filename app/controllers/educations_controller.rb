@@ -1,10 +1,11 @@
 class EducationsController < ApplicationController
-  before_action :set_education, only: [:show, :edit, :update, :destroy]
+ 
 
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.all
+    @cv = Cv.find(params[:cv_id])
+    @educations = @cv.educations
   end
 
   # GET /educations/1
@@ -14,6 +15,7 @@ class EducationsController < ApplicationController
 
   # GET /educations/new
   def new
+    @cv = Cv.find(params[:cv_id])
     @education = Education.new
   end
 
@@ -24,11 +26,12 @@ class EducationsController < ApplicationController
   # POST /educations
   # POST /educations.json
   def create
-    @education = Education.new(education_params)
+    @cv = Cv.find(params[:cv_id])
+    @education = @cv.educations.create(education_params)
 
     respond_to do |format|
       if @education.save
-        format.html { redirect_to @education, notice: 'Education was successfully created.' }
+        format.html { redirect_to cvs_path, notice: 'Education was successfully created.' }
         format.json { render :show, status: :created, location: @education }
       else
         format.html { render :new }

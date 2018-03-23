@@ -1,31 +1,31 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Educations</h1>
-
-<table>
+<div class="well">
+<%= link_to "Back to CV overview", cvs_path ,class:"btn btn-primary"%>
+</div>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
       <th>School</th>
       <th>Subject</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th>Remove </th>
+           
     </tr>
   </thead>
-
   <tbody>
-    <% @educations.each do |education| %>
+    <% if @educations.size == 0 %>
       <tr>
-        <td><%= education.school %></td>
-        <td><%= education.subject %></td>
-        <td><%= education.description %></td>
-        <td><%= link_to 'Show', education %></td>
-        <td><%= link_to 'Edit', edit_education_path(education) %></td>
-        <td><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td colspan="6">No experiences found.</td>
       </tr>
+    <% else %>
+      <% @educations.each do |ed| %>
+        <tr>
+          <td><%= ed.school %></td>
+          <td><%= ed.subject %></td>
+          <td><%= ed.description %></td>
+          
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Education', new_education_path %>

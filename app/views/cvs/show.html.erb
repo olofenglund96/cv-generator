@@ -103,19 +103,21 @@
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
-			
 			<div class="sectionContent">
+			<% @cv.educations.each do |ed| %>
+				<article>
+					<h2><%=ed.school%></h2>
+					<p class="subDetails"><%=ed.subject%></p>
+					<p><%=ed.description%></p>
+				</article>
+				<% end %>
+				<%if @cv.educations.length < 2 #Show example of education%>
 				<article>
 					<h2>College/University</h2>
 					<p class="subDetails">Qualification</p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
 				</article>
-				
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
+				<% end%>
 			</div>
 			<div class="clear"></div>
 		</section>
