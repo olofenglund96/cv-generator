@@ -57,6 +57,8 @@ class EducationsController < ApplicationController
   # DELETE /educations/1
   # DELETE /educations/1.json
   def destroy
+    @cv = Cv.find(params[:cv_id])
+    @education = @cv.education
     @education.destroy
     respond_to do |format|
       format.html { redirect_to educations_url, notice: 'Education was successfully destroyed.' }

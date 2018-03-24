@@ -23,7 +23,8 @@
           <td><%= ed.school %></td>
           <td><%= ed.subject %></td>
           <td><%= ed.description %></td>
-          
+          <td><%= button_to "Delete", education_path(ed) , method: :delete,
+          data: { confirm: "Are you sure you wish to delete this education?" }, class: "btn btn-danger" %></td>
         </tr>
       <% end %>
     <% end %>
