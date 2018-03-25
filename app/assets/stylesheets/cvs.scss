@@ -23,7 +23,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
     }
     
     #cv {
-        width: 90%;
+        width: 100%;
         max-width: 800px;
         background: #f3f3f3;
         margin: 30px auto;
@@ -155,7 +155,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
         margin-bottom: 3px;
     }
     
-    @media all and (min-width: 602px) and (max-width: 800px) {
+    /*@media all and (min-width: 602px) and (max-width: 800px) {
         #headshot {
             display: none;
         }
@@ -231,7 +231,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address
         #cv {
             width: 100%;
         }
-    }
+    }*/
     
     @-webkit-keyframes reset {
         0% {

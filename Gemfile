@@ -49,4 +49,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mongoid'
 gem 'bson_ext'
 gem 'simple_form'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+
 ruby '2.4.3'

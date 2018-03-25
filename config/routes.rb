@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-resources :cvs do 
+resources :cvs do
+  member do
+    get :get_pdf
+  end
   resources :experiences
   resources :educations
 end

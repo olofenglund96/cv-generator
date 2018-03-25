@@ -20,12 +20,12 @@
   </div>
 </div>
 -->
-  <%= stylesheet_link_tag params[:controller] %>
+<%= wicked_pdf_stylesheet_link_tag params[:controller]%>
 <div id="top">
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
-		<%= image_tag("headshot.jpg") %>
+		<%= wicked_pdf_image_tag "headshot.jpg" %>
 		</div>
 		
 		<div id="name">
