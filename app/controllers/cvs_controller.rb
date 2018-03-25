@@ -22,18 +22,14 @@ class CvsController < ApplicationController
 
   def get_pdf
     @cv = Cv.find(params[:id])
-    respond_to do |format|
-      format.pdf do 
-        render pdf: 'test.pdf',
-              template: 'cvs/pdf.html.erb',
-              margin:  {
-                top: 0,
-                bottom: 0,
-                left: 0,
-                right: 0
-              }
-      end
-    end
+    render pdf: 'test.pdf',
+           template: 'cvs/pdf.html.erb',
+           margin:  {
+             top: 0,
+             bottom: 0,
+             left: 0,
+             right: 0
+          }
   end
 
   def destroy
