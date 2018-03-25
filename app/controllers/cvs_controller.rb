@@ -29,7 +29,8 @@ class CvsController < ApplicationController
              bottom: 0,
              left: 0,
              right: 0
-          }
+          },
+          header: { html: { template: 'cvs/_header.pdf.html.erb'}}
   end
 
   def destroy

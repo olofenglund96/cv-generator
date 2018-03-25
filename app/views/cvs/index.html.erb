@@ -51,7 +51,7 @@
             <%= button_to "Delete", cv_path(cv), method: :delete, data: { confirm: "Are you sure you wish to delete the CV of #{cv.first_name} #{cv.last_name}?" }, class: "btn btn-danger" %>
           </td>
           <td>
-            <%= button_to "Get PDF", get_pdf_cv_path(cv), method: :get, class: "btn btn-default" %>
+            <%= button_to "Get PDF", get_pdf_cv_path(cv, format: :pdf), method: :get, class: "btn btn-default" %>
           </td>
         </tr>
       <% end %>
