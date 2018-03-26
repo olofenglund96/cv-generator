@@ -1,0 +1,21 @@
+@if $nb-use-text-input {
+  .#{$nb-namespace}c-text-input {
+    width: 100%;
+    padding: $nb-text-input-padding;
+    border-width: 0;
+    border-radius: $nb-text-input-border-radius;
+    box-shadow: inset 0 0 0 1px $nb-text-input-border-color;
+  }
+
+  .#{$nb-namespace}c-text-input[disabled] {
+    background: $nb-color-background-disabled;
+  }
+
+  .#{$nb-namespace}c-text-input--textarea {
+    min-height: $nb-text-input-textarea-min-height;
+  }
+
+  &.#{$nb-namespace}c-text-input--sm {
+    padding: $nb-text-input-padding-sm;
+  }
+}

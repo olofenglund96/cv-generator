@@ -1,0 +1,134 @@
+@if $nb-use-tabs {
+  .#{$nb-namespace}c-tabs {
+    position: relative;
+    z-index: 0;
+  }
+
+  .#{$nb-namespace}c-tabs__tab {
+    position: relative;
+    padding: $nb-tab-padding;
+    color: $nb-tab-color;
+    background-color: $nb-tabs-background;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      &::before {
+        opacity: 0.65;
+      }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      content: ' ';
+    }
+
+    &::before {
+      top: 0;
+      content: ' ';
+      border-top: $nb-tab-border-active;
+    }
+
+    &::after {
+      top: 100%;
+      height: 1px;
+      background-color: $nb-color-white;
+    }
+
+    &:first-child,
+    &:last-child {
+      z-index: 2;
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__list {
+    overflow-x: auto;
+    padding-bottom: 1px; // overflow hack #1
+    white-space: nowrap;
+
+    @include nb-respond-to('sm') {
+      padding-bottom: 2px; // overflow hack #1
+    }
+
+    @include nb-respond-to('md') {
+      padding-bottom: 1px; // overflow hack #1
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__list--spread-items {
+    display: flex;
+  }
+
+  .#{$nb-namespace}c-tabs__list-wrapper {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 1px;
+      z-index: 1;
+      width: 50px;
+      pointer-events: none;
+      content: ' ';
+    }
+
+    &::before {
+      left: 0;
+      background-image: linear-gradient(to right, $nb-color-site-background, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background-image: linear-gradient(to left, $nb-color-site-background, transparent);
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__tab[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__tab.is-active {
+    color: $nb-tab-color-active;
+    background-color: $nb-tab-background-active;
+    border-style: solid;
+    border-color: $nb-color-base-border;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .#{$nb-namespace}c-tabs__list--spread-items > .#{$nb-namespace}c-tabs__tab {
+    flex: 1;
+  }
+
+  .#{$nb-namespace}c-tabs__panel {
+    margin-top: -1px; //overflow hack #1
+    @include nb-respond-to('md') {
+      margin-top: -2px; //overflow hack #1
+    }
+    @include nb-respond-to('lg') {
+      margin-top: -1px; //overflow hack #1
+    }
+
+    padding: $nb-card-padding;
+    background-color: $nb-card-background;
+    border: 1px solid $nb-color-base-border;
+  }
+}

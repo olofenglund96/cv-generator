@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -49,8 +49,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mongoid'
 gem 'bson_ext'
 gem 'simple_form'
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
-
-
 ruby '2.4.3'
+gem 'wicked_pdf'

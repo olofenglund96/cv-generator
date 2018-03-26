@@ -1,0 +1,9 @@
+$nb-border-radius: 0.3rem !default;
+$nb-transition-duration: 0.3s !default;
+$nb-nav-bp-key: 'nav';
+
+$nb-active-border-width: ($nb-spacing-unit / 3) !default;
+$nb-active-border-color: $nb-color-alpha !default;
+$nb-active-border: $nb-active-border-width solid $nb-active-border-color !default;
+
+$nb-breakpoints: map-merge($nb-breakpoints, ( $nb-nav-bp-key: 800px));

@@ -1,0 +1,17 @@
+body {
+  @include nb-base-font-size;
+
+  font-family: $nb-font-family-alpha;
+  color: $nb-color-base-text;
+  background-color: $nb-color-site-background;
+}
+
+a {
+  color: $nb-color-link;
+  text-decoration-skip: ink;
+
+  &:hover,
+  &:focus {
+    color: darken($nb-color-link, 10%);
+  }
+}

@@ -1,0 +1,22 @@
+@function nb-map-set($map, $key, $value) {
+  $new: ($key: $value);
+  @return map-merge($map, $new);
+}
+
+@function nb-px-to-rem-font-size($desired, $breakpoint) {
+  $browser-default-font-size: 16px;
+  $res: $desired / ((map-get($nb-root-sizing, $breakpoint) / 100%) * $browser-default-font-size);
+  @return #{$res}rem;
+}
+
+@function nb-px-to-rem-font-sizes($desired) {
+  $res: ();
+  @each $key, $value in $desired {
+    $temp: ();
+    @each $innerKey, $innerValue in $value {
+      $temp: nb-map-set($temp, $innerKey, nb-px-to-rem-font-size($innerValue, $innerKey));
+    }
+    $res: nb-map-set($res, $key, $temp);
+  }
+  @return $res;
+}

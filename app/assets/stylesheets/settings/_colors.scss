@@ -1,0 +1,28 @@
+$nb-color-alpha: #8bc34a !default;
+$nb-color-beta: #086375 !default;
+$nb-color-gamma: #ffa630 !default;
+$nb-color-delta: #d7e8ba !default;
+$nb-color-epsilon: #4da1a9 !default;
+
+$nb-color-white: #fff !default;
+$nb-color-grey-v-light: #f6f6f6 !default;
+$nb-color-grey-light: #d7d7d7 !default;
+$nb-color-grey: #8e8e8e !default;
+$nb-color-grey-dark: #4c4c4c !default;
+$nb-color-grey-v-dark: #242424 !default;
+$nb-color-black: #0c0c0c !default;
+
+//STATUS
+$nb-color-success: $nb-color-alpha !default;
+$nb-color-info: $nb-color-beta !default;
+$nb-color-warning: #ffb329 !default;
+$nb-color-error: #c12127 !default;
+
+// #TYPOGRAPHY
+$nb-color-base-text: $nb-color-grey-v-dark !default;
+$nb-color-link: $nb-color-alpha !default;
+
+// #GENERAL
+$nb-color-site-background: $nb-color-grey-v-light !default;
+$nb-color-base-border: $nb-color-grey-light !default;
+$nb-color-background-disabled: $nb-color-grey-light !default;

@@ -1,0 +1,13 @@
+$nb-tabs-background: $nb-color-white !default;
+
+$nb-tab-padding: $nb-spacing-unit !default;
+$nb-tab-color: $nb-color-grey-v-dark !default;
+$nb-tab-background: $nb-color-grey-v-light !default;
+$nb-tab-transition: background-color $nb-transition-duration ease !default;
+
+$nb-tab-color-active: inherit !default;
+$nb-tab-background-active: $nb-color-white !default;
+$nb-tab-border-active: $nb-active-border !default;
+
+$nb-panel-padding: $nb-spacing-unit !default;
+$nb-panel-background: $nb-color-white !default;

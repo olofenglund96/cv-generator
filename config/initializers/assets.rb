@@ -12,4 +12,11 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( cvs.css )
+
+#Am: Precompile neccesary for pipeline to work since default launch "rails -s" launch in production.
+Rails.application.config.assets.precompile += [ 'cv_styles_show/cv_1.css.scss' ]
+Rails.application.config.assets.precompile += ['cv_styles_pdf/cv_1_pdf.css.scss']
+
+#Regex to only precompile scss files without underscore under, eg. 'nebula-css.scss' will be compiled but not '_settings.scss'. Ruby on rails asset pipeline looks
+#into lib/assets/stylesheets among others, controlled in the application.css file using Sprocket-specific =require directives..
+Rails.application.config.assets.precompile << '/(^[^_\/]|\/[^_])[^\/]*$/'

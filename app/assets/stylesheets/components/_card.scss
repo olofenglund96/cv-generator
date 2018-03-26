@@ -1,0 +1,70 @@
+@if $nb-use-card {
+  .#{$nb-namespace}c-card {
+    background-color: $nb-card-background;
+    border: 1px solid $nb-color-base-border;
+  }
+
+  .#{$nb-namespace}c-card__body {
+    padding: $nb-card-padding;
+  }
+
+  .#{$nb-namespace}c-card__body--sm {
+    padding: ($nb-card-padding / 2);
+  }
+
+  .#{$nb-namespace}c-card__body--lg {
+    padding: ($nb-card-padding * 2);
+  }
+}
+
+@if $nb-use-status-card {
+  .#{$nb-namespace}c-status-card {
+    display: table;
+    width: 100%;
+    border: 1px solid $nb-color-base-border;
+    background-color: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-status-card__component {
+    display: table-cell;
+    padding-left: ($nb-active-border-width / 2);
+    padding-right: ($nb-active-border-width / 2);
+    vertical-align: middle;
+    color: $nb-color-white;
+    fill: $nb-color-white;
+  }
+
+  .#{$nb-namespace}c-status-card__component > * {
+    display: block;
+    padding-left: ($nb-spacing-unit-half / 2 );
+    padding-right: ($nb-spacing-unit-half / 2 );
+  }
+
+  .#{$nb-namespace}c-status-card__component .#{$nb-namespace}c-icon__svg {
+    max-width: initial;
+  }
+
+  .#{$nb-namespace}c-status-card__body {
+    display: table-cell;
+    width: 100%;
+    padding: $nb-spacing-unit;
+    vertical-align: middle;
+  }
+
+  .#{$nb-namespace}c-status-card--success > .#{$nb-namespace}c-status-card__component {
+    background-color: $nb-color-success;
+  }
+
+  .#{$nb-namespace}c-status-card--info > .#{$nb-namespace}c-status-card__component {
+    background-color: $nb-color-info;
+  }
+
+  .#{$nb-namespace}c-status-card--warning > .#{$nb-namespace}c-status-card__component {
+    background-color: $nb-color-warning;
+  }
+
+  .#{$nb-namespace}c-status-card--error > .#{$nb-namespace}c-status-card__component {
+    background-color: $nb-color-error;
+  }
+}
+
