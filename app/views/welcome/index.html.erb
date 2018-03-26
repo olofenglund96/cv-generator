@@ -1,0 +1,20 @@
+
+<%= render partial: "shared/menu" %>
+<div class="o-site-wrap o-site-padding">
+<div class="o-section-md u-text-center">
+<h1>Welcome to CV-generator!</h1>
+
+ <ul class="o-matrix-list o-matrix-list-md u-soft-md">
+      <li class="o-matrix-list__item">
+         <%= link_to "I want to make my CV!", new_cv_path, class: "c-btn c-btn--beta c-btn--md u-no-underline" %>
+      </li>
+      <li class="o-matrix-list__item">
+        <%= link_to "I want to see others CV:s!", cvs_path, class: "c-btn c-btn--alpha c-btn--md u-no-underline" %>
+      </li>
+     
+    </ul>
+
+
+</div>
+
+</div>

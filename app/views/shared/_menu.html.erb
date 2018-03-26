@@ -1,0 +1,35 @@
+<header class="c-navbar">
+  <div class="c-navbar__inner is-sticky">
+    <button class="c-navbar__overlay" aria-hidden="true" tabIndex="0"></button>
+    <nav class="c-navbar__wrap" role="navigation">
+      <button class="c-navbar__toggle" aria-hidden="true" tabIndex="0"><span class="c-navbar__toggle-bars"></span></button>
+      <a href="/nebula" class="c-navbar__logo" style="width:100px">
+       <%= image_tag "cv-logo"%>
+      </a>
+      <div class="c-navbar__content-wrapper">
+        <ul class="c-navbar__content">
+          <li class="c-navbar__item ">
+            <a href="/nebula/planets" class="c-navbar__link u-no-underline">Guide</a>
+          </li>
+          <li class="c-navbar__item" aria-haspopup="true" aria-expanded="false">
+            <button class="c-navbar__dropdown-toggle is-active">Templates</button>
+          </li>
+          <li class="c-navbar__item">
+            <a href="/nebula/pulsars" class="c-navbar__link">
+              <div class="c-icon"><span class="c-icon__text" style="vertical-align:middle">About us</span>
+                <svg viewBox="0 0 47.001 47.001" class="c-icon__svg c-icon__svg--right" role="presentation" style="width:24px;height:24px;vertical-align:middle">
+                  <use xlink:href="#lightbulb"></use>
+                </svg>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
+          <div class="c-navbar__item c-navbar__item--reset-line-height">
+            <button class="c-btn c-btn--alpha c-btn--sm">CTA</button>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
