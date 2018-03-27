@@ -18,3 +18,4 @@
 //= require isotope-init
 //= require navbar-CTA
 //= require fade-in
+//= require navbar-toggle
