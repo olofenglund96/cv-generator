@@ -13,7 +13,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-config.serve_static_assets = true
+
 
 #Am: Precompile neccesary for pipeline to work.
 Rails.application.config.assets.precompile += [ 'cv_styles_show/cv_1.css.scss' ]
