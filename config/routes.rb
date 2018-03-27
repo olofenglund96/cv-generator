@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+get '/guide', to:'guide#index'
 
 resources :cvs do
   member do

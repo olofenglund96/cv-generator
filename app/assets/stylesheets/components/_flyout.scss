@@ -65,4 +65,7 @@
       @include nb-triangle(right);
     }
   }
+  .#{$nb-namespace}c-flyout__content--lg {
+    width: $nb-spacing-unit;
+  }
 }

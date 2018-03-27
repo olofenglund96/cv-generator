@@ -18,4 +18,7 @@
   &.#{$nb-namespace}c-text-input--sm {
     padding: $nb-text-input-padding-sm;
   }
+  &.#{$nb-namespace}c-text-input--xs {
+    padding: $nb-text-input-padding-sm/2;
+  }
 }

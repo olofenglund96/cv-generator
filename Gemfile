@@ -8,6 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
+#Use autoprefixer
+gem 'autoprefixer-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -51,3 +53,4 @@ gem 'bson_ext'
 gem 'simple_form'
 ruby '2.4.3'
 gem 'wicked_pdf'
+gem 'jquery-rails'

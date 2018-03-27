@@ -12,4 +12,9 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require isotope-layout/dist/isotope.pkgd.min.js
+
+//= require cv-card-shrink
+//= require isotope-init
+//= require navbar-CTA

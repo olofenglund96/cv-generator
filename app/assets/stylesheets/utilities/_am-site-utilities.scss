@@ -2,3 +2,44 @@
 .u-no-underline:hover{
   text-decoration: none;
 }
+.u-margin-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+.u-shrink{
+  
+  transform: scale(0.75);
+}
+t-center{
+  text-align: center;
+}
+
+.u-bg-shadow--sm{
+  box-shadow:   0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.u-bg-shadow--sm--hover{
+  box-shadow:   0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);  
+  transition: all 0.3s;
+  &:hover{
+      box-shadow:   0 8px 17px 0 rgba(0,0,0,0.16), 0 6px 20px 0 rgba(0,0,0,0.12);
+  }
+}
+
+.u-txt-bold{
+  font-weight: bold !important;
+}
+.u-txt-light{
+  font-weight: 300 !important;
+}
+
+.u-lineheight-sm{
+  line-height: 1rem !important;
+}
+.u-txt-italic{
+  font-style: italic;
+}
+
+.u-soft-top-sm{
+  padding-top: $nb-spacing-unit/2;
+}
+
