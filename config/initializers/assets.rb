@@ -19,6 +19,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += [ 'cv_styles_show/cv_1.css.scss' ]
 Rails.application.config.assets.precompile += ['cv_styles_pdf/cv_1_pdf.css.scss']
 
+
 #Regex to only precompile scss files without underscore under, eg. 'nebula-css.scss' will be compiled but not '_settings.scss'. Ruby on rails asset pipeline looks
 #into lib/assets/stylesheets among others, controlled in the application.css file using Sprocket-specific =require directives..
 Rails.application.config.assets.precompile << '/(^[^_\/]|\/[^_])[^\/]*$/'
