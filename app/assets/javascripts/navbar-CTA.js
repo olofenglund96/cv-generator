@@ -8,7 +8,6 @@ $(document).ready(function initCta(){
     })
     $(document).click(function(e){
         if($(e.target).is("js-navbar-cta__popup")===false && closeOnClickOutside){
-            console.log("sho")
            $(".js-navbar-cta").removeClass("is-open")  
         }
     })
