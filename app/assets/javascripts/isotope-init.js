@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).on('load',function(){
   var $isotopeGrid= $('.js-isotope-grid').isotope({
     // options...
     itemSelector: '.js-isotope-grid-item'
