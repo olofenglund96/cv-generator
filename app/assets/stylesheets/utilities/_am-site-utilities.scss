@@ -38,8 +38,16 @@ t-center{
 .u-txt-italic{
   font-style: italic;
 }
-
+.u-border-dashed{
+  border: 5px dashed $nb-color-grey;
+}
 .u-soft-top-sm{
   padding-top: $nb-spacing-unit/2;
+}
+.u-push-top-md{
+  margin-top: $nb-spacing-unit/2;
+}
+.u-bg-alpha{
+  background-color: $color-alpha !important;
 }
 

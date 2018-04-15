@@ -1,0 +1,63 @@
+
+
+<h1>CV in this database</h1>
+ <%= stylesheet_link_tag "application", media: "all" %>
+<div class="well">
+  <%= link_to "New Person", new_cv_path, class: "btn btn-primary" %>
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Personal Letter</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% if @cvs.size == 0 %>
+      <tr>
+        <td colspan="6">No Cv:s found.</td>
+      </tr>
+    <% else %>
+      <% @cvs.each do |cv| %>
+        <tr>
+          <td><%= cv.first_name %></td>
+          <td><%= cv.last_name %></td>
+          <td><%= cv.email %></td>
+          <td><%= cv.personal_letter[0..29]+" ..." %></td>       
+          <td>
+          <%= link_to "Show", cv_path(cv), class: "btn btn-default" %>
+        </td>
+        <td> <%= link_to "Add experience", new_cv_experience_path(cv) ,class:"btn btn-default"%></td>
+          
+          <td> <%= link_to "Show Experiences", cv_experiences_path(cv) ,class:"btn btn-default"%></td>
+
+            <td> <%= link_to "Add education", new_cv_education_path(cv) ,class:"btn btn-default"%></td>
+          
+          <td> <%= link_to "Show education", cv_educations_path(cv) ,class:"btn btn-default"%></td>
+          <td>
+            <%= button_to "Delete", cv_path(cv), method: :delete, data: { confirm: "Are you sure you wish to delete the CV of #{cv.first_name} #{cv.last_name}?" }, class: "btn btn-danger" %>
+          </td>
+          <td>
+            <%= button_to "Get PDF", get_pdf_cv_path(cv, format: :pdf), method: :get, class: "btn btn-default" %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
