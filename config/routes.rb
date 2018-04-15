@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 devise_for :users
 get '/guide', to:'guide#index'
+get '/users', to:'users#index'
 
 resources :cvs do
   member do

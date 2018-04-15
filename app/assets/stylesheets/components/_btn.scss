@@ -50,6 +50,10 @@
     @include btn-color($nb-button-beta-color);
   }
 
+  .#{$nb-namespace}c-btn--warning {
+    @include btn-color($color-warning);
+  }
+
   .#{$nb-namespace}c-btn[disabled] {
     opacity: 0.6;
   }

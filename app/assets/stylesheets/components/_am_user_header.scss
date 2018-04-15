@@ -1,0 +1,13 @@
+.c-user-header{
+  height: $nb-spacing-unit*4;
+  &__img-container{
+    border-radius: 100% 100%;
+    float: right;
+    background: lighten($color-alpha,20%);
+    padding: $nb-padding/2;
+    margin-top: $nb-spacing-unit;
+    > img {
+      border-radius: 50% 50%;
+    }
+  }
+}

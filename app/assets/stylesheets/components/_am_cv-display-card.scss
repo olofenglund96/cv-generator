@@ -15,7 +15,25 @@
   &__body{
     position: relative;
     margin: 0;
+    height: auto;
     display:block;
+    
+    &--empty{
+      height: 340px;
+      width: 100%;
+      background-color: $color-alpha;
+      transition: background-color 0.3s;
+      text-align: center;
+      padding-top: 80px;
+      a &:hover{
+        background-color: darken($color-alpha,10%);
+      }
+      > h3{
+        color: $nb-color-grey-v-light;
+        text-decoration: none;
+       
+      }
+    }
   }
   &__overlay{
     position: absolute;
@@ -33,12 +51,26 @@
     
     color: white;
   }
+  &__overlay--new{
+    
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    transform: scale(0,0);
+    margin-top: 30px;
+    color: white;
+  }
     &:hover &__overlay{
     
     background: rgba(0,0,0,0.7);
     transform: scaleY(1);
  
   }
+  
+  &:hover &__overlay--new{
+    transform: scale(1);
+ 
+  }
+ 
 
     & img{
       
@@ -46,4 +78,14 @@
       display: block;
       position: relative;
   }
+}
+
+.plus-sign{
+  width: 60px;
+  height: 60px;
+  border-radius: 50% 50%;
+  font-size: 60px;
+  line-height: 44px;
+  border: 2px solid $nb-color-white;
+  margin: auto;
 }
