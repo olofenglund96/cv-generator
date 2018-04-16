@@ -1,2 +1,26 @@
 <%= render partial: "shared/menu" %>
 <%= render partial: "shared/user-header"%>
+<div class="o-site-wrap o-site-wrap--padding">
+<div class="o-section-md">
+</div>
+<div class="o-section-md">
+<div class="c-tabs">
+  <div class="c-tabs__list-wrapper">
+    <div class="c-tabs__list" role="tablist">
+      <button class="c-tabs__tab js-form-tab is-active" data-panel="panel-1">Tab 1</button>
+      <button class="c-tabs__tab js-form-tab" data-panel="panel-2">Tab 2</button>
+      <button class="c-tabs__tab js-form-tab" data-panel="panel-3">Tab 3</button>
+      <button class="c-tabs__tab js-form-tab " data-panel="panel-4" >Tab 4</button>
+      <button class="c-tabs__tab js-form-tab" data-panel="panel-5">Tab 5</button>
+    </div>
+  </div>
+
+  <div id="panel-1" class="c-tabs__panel js-panel is-visible" >Panel 1 Content</div>
+  <% $i=1 %>
+  <% while $i<6 %>
+  <div id="panel-<%=$i%>" class="c-tabs__panel js-panel" >Panel <%=$i%> Content</div>
+  <% $i=$i+1 %>
+  <% end %>
+</div>
+</div>
+</div>
