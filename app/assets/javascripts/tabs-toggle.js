@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(window).on("load", function(){
   $('.js-form-tab').on("click",function(){
 
     $('.js-form-tab').removeClass('is-active')
