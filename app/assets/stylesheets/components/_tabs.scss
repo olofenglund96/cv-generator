@@ -126,6 +126,10 @@
     @include nb-respond-to('lg') {
       margin-top: -1px; //overflow hack #1
     }
+    display:none;
+    &.is-visible{
+      display:block;
+    }
 
     padding: $nb-card-padding;
     background-color: $nb-card-background;
