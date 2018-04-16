@@ -19,4 +19,4 @@
 //= require navbar-CTA
 //= require fade-in
 //= require navbar-toggle
-///= require tabs-toggle
+//= require tabs-toggle
