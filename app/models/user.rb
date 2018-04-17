@@ -36,7 +36,7 @@ class User
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String
-  
+
   validates :email, uniqueness: true
   validates :email, format: { with: Devise::email_regexp }
   validates :first_name, :last_name, presence: true, format: { with: /\A[\p{L}\p{M}*\-\p{Zs}]{2,}\z/ }
