@@ -30,13 +30,39 @@
       <button class="c-tabs__tab js-form-tab" data-panel="panel-5">Tab 5</button>
     </div>
   </div>
-
-  <div id="panel-1" class="c-tabs__panel js-panel is-visible" ><%= render "form-user" %></div>
+  <form>
+  <div id="panel-1" class="c-tabs__panel js-panel is-visible u-bg-shadow--sm u-bg-shadow--sm--hover" >
+    <div class="o-soft-md">
+    <h3>Experiences</h3>
+    <div class="u-soft-md u-bg-alpha">
+      <div class="o-grid o-grid--gutter-md">
+        <div class="o-grid__item u-2/5">
+          <label for="company" class="c-label">Company</label>
+          <input type="text" class="c-text-input c-text-input--sm " id="company" placeholder="Apple Inc" />
+        </div>
+        <div class="o-grid__item u-1/5">
+          <label for="company" class="c-label">Start Date</label>
+          <input type="date" class="c-text-input c-text-input--sm " id="start_date" placeholder="Apple Inc" />
+        </div>
+        <div class="o-grid__item u-1/5">
+          <label for="company" class="c-label">End Date</label>
+          <input type="date" class="c-text-input c-text-input--sm " id="end_date" placeholder="Apple Inc" />
+        </div>
+        <div class="o-grid__item u-soft-top-md u-3/5">
+          <label for="company" class="c-label">Description</label>
+           <textarea class="c-text-input c-text-input--textarea" id="comments" placeholder="What you did at this job etc..."></textarea>
+        </div>
+      </div>
+      </div>
+    </div>
+  
+  </div>
   <% $i=1 %>
   <% while $i<6 %>
-  <div id="panel-<%=$i%>" class="c-tabs__panel js-panel" >Panel <%=$i%> Content</div>
+  <div id="panel-<%=$i%>" class="c-tabs__panel js-panel u-bg-shadow--sm u-bg-shadow--sm--hover" >Panel <%=$i%> Content</div>
   <% $i=$i+1 %>
   <% end %>
+  </form>
 </div>
 </div>
 </div>
