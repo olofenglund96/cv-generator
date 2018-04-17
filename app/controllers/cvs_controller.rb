@@ -6,6 +6,7 @@ class CvsController < ApplicationController
     
   def new
    @cv= Cv.new
+   @exp = Experience.new
   end
     
   def create
