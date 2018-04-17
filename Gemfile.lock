@@ -212,6 +212,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bcrypt (~> 3.1.11)
   bson_ext
   byebug
   cancan

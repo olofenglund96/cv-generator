@@ -58,3 +58,4 @@ gem 'jquery-turbolinks'
 gem 'rails_serve_static_assets'
 gem "cancan"
 gem "devise"
+gem 'bcrypt', '~> 3.1.11'
