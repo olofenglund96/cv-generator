@@ -25,6 +25,21 @@
             </a>
           </li>
         </ul>
+        <% if !user_signed_in? %>
+        <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
+          <li> <div class="c-navbar__item c-navbar__item--reset-line-height js-navbar-cta">
+          <%= link_to "Sign up", new_user_registration_path, class: "c-btn c-btn--alpha c-btn--sm" %>
+        </div>
+        <% else %>
+          <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
+          <li> <div class="c-navbar__item c-navbar__item--reset-line-height js-navbar-cta">
+          <%= link_to(destroy_user_session_path, method: :delete) do %> 
+            <div class="c-btn c-btn--alpha c-btn--sm">Sign out</div>
+          <% end %>
+        </div>
+        <% end %>
+      </li>
+        </ul>
         <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
           <li> <div class="c-navbar__item c-navbar__item--reset-line-height c-flyout js-navbar-cta" aria-haspopup="true" aria-expanded="true">
           <button class="c-btn c-btn--alpha c-btn--sm">Free premium CV</button>

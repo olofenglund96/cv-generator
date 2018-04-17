@@ -54,4 +54,8 @@ gem 'simple_form'
 ruby '2.4.3'
 gem 'wicked_pdf'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'rails_serve_static_assets'
+gem "cancan"
+gem "devise"
+gem 'bcrypt', '~> 3.1.11'

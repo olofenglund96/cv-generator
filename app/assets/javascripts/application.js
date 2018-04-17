@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require_tree
+//= require_self
 //= require turbolinks
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require isotope-layout/dist/isotope.pkgd.min.js
 
 //= require isotope-init
