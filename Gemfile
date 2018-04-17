@@ -55,3 +55,5 @@ ruby '2.4.3'
 gem 'wicked_pdf'
 gem 'jquery-rails'
 gem 'rails_serve_static_assets'
+gem "cancan"
+gem "devise"
