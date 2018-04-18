@@ -6,16 +6,23 @@ class CvsController < ApplicationController
     
   def new
    @cv= Cv.new
-   @exp = Experience.new
+   @experience = Experience.new
   end
     
-  def create
+  def create  
     @cv= Cv.new(cv_params)
       if @cv.save
-        redirect_to cvs_path, notice: "The cv has been created!" and return
+        redirect_to edit_cv_path(@cv) and return
       end
     render 'new'
   end
+
+  def edit
+    @cv = params[:id]
+
+  end
+
+
 
   def show
     @cv = Cv.find(params[:id])
