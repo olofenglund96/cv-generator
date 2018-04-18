@@ -19,6 +19,7 @@ class CvsController < ApplicationController
 
   def edit
     @cv = params[:id]
+    @experience = Experience.new
 
   end
 
