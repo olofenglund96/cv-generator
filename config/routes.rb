@@ -8,9 +8,12 @@ resources :cvs do
   member do
     get :get_pdf
   end
-  resources :experiences
-  resources :educations
 end
+
+resources :educations
+get '/experiences', to:'experiences#new'
+
+#resources :experiences
 
 root to: "welcome#index"
 

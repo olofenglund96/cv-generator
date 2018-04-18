@@ -31,35 +31,40 @@
     </div>
   </div>
 
-  <div id="panel-1" class="c-tabs__panel js-panel is-visible u-bg-shadow--sm u-bg-shadow--sm--hover" >
+  <div id="panel-1" class="c-tabs__panel js-panel is-visible  u-bg-shadow--sm u-bg-shadow--sm--hover" >
     <div class="o-soft-md">
     <h3>Experiences</h3>
     <div class="u-soft-md u-bg-alpha">
-
+      <%= form_for [@experience] do |f| %>
       <div class="o-grid o-grid--gutter-md">
         <div class="o-grid__item u-2/5">
+          
+          <%= f.label :company, 'Company', class: "c-label" %>
+          <%= f.text_field :company,  placeholder: "Apple Inc.", class: "c-text-input c-text-input--sm"%>
+          <!--
           <label for="company" class="c-label">Company</label>
           <input type="text" class="c-text-input c-text-input--sm " id="company" placeholder="Apple Inc" />
+          -->
         </div>
         <div class="o-grid__item u-1/5">
-          <label for="company" class="c-label">Start Date</label>
-          <input type="date" class="c-text-input c-text-input--sm " id="start_date" placeholder="Apple Inc" />
+          <%= f.label :start_date, 'Start Date', class: "c-label" %>
+          <%= f.date_field :start_date, class: "c-text-input c-text-input--sm" %>
         </div>
         <div class="o-grid__item u-1/5">
-          <label for="company" class="c-label">End Date</label>
-          <input type="date" class="c-text-input c-text-input--sm " id="end_date" placeholder="Apple Inc" />
+          <%= f.label :end_date, 'End Date', class: "c-label" %>
+          <%= f.date_field :end_date, class: "c-text-input c-text-input--sm" %>
         </div>
         <div class="o-grid__item u-soft-top-md u-3/5">
-          <label for="company" class="c-label">Description</label>
-           <textarea class="c-text-input c-text-input--textarea" id="comments" placeholder="What you did at this job etc..."></textarea>
+          <%= f.label :description, 'Description', class: "c-label" %>
+          <%= f.text_area :description,  placeholder: "What you did at this job etc..", class: "c-text-input c-text-input--textarea" %>
         </div>
       </div>
-
     </div>
     </div>
     <div class="u-soft-md">
-       <%= link_to "Create Cv", cvs_path, class: "c-btn c-btn--alpha c-btn--md u-no-underline" %>
+       <%= f.submit "Add Experience", class: "c-btn c-btn--alpha c-btn--sm u-no-underline" %>
     </div>
+    <% end %>
   </div>
    <div id="panel-2" class="c-tabs__panel js-panel u-bg-shadow--sm u-bg-shadow--sm--hover" >
  
