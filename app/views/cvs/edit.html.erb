@@ -34,17 +34,17 @@
   <div id="panel-1" class="c-tabs__panel js-panel is-visible  u-bg-shadow--sm u-bg-shadow--sm--hover" >
     <div class="o-soft-md">
     <h3>Experiences</h3>
+    <% if flash[:notice] %>
+      <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
     <div class="u-soft-md u-bg-alpha">
-      <%= form_for [@experience] do |f| %>
+      <%= form_for [@cv,@experience] do |f| %>
       <div class="o-grid o-grid--gutter-md">
         <div class="o-grid__item u-2/5">
           
           <%= f.label :company, 'Company', class: "c-label" %>
           <%= f.text_field :company,  placeholder: "Apple Inc.", class: "c-text-input c-text-input--sm"%>
-          <!--
-          <label for="company" class="c-label">Company</label>
-          <input type="text" class="c-text-input c-text-input--sm " id="company" placeholder="Apple Inc" />
-          -->
+        
         </div>
         <div class="o-grid__item u-1/5">
           <%= f.label :start_date, 'Start Date', class: "c-label" %>
@@ -62,6 +62,7 @@
     </div>
     </div>
     <div class="u-soft-md">
+  
        <%= f.submit "Add Experience", class: "c-btn c-btn--alpha c-btn--sm u-no-underline" %>
     </div>
     <% end %>

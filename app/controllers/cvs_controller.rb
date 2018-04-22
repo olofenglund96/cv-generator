@@ -18,8 +18,8 @@ class CvsController < ApplicationController
   end
 
   def edit
-    @cv = params[:id]
-    @experience = Experience.new
+    @cv = Cv.find(params[:id])
+    @experience = @cv.experiences.build
 
   end
 
@@ -40,6 +40,9 @@ class CvsController < ApplicationController
              right: 0
           },
           header: { html: { template: 'cvs/_header.pdf.html.erb'}}
+  end
+  def add_experience
+
   end
 
   def destroy

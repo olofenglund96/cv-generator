@@ -9,9 +9,12 @@ resources :cvs do
     get :get_pdf
   end
 end
+resources :cvs do
+  resources :experiences
+end
 
 resources :educations
-get '/experiences', to:'experiences#new'
+
 
 #resources :experiences
 
