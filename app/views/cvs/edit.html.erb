@@ -5,7 +5,7 @@
 </div>
 <div class="o-section-md">
   <div class="o-grid o-grid--gutter-md">
-    <div class="o-grid__item u-1/4">
+    <div class="o-grid__item u-1/4@md u-1/2@sm">
       <label for="country" class="c-label">Select Cv Template</label>
       <select class="c-select c-select--sm" id="cv-template-select">
         <option value="cv-olof">Olofs Cv</option>
@@ -37,24 +37,27 @@
     <% if flash[:notice] %>
       <div class="alert alert-success"><%= flash[:notice] %></div>
     <% end %>
-    <div class="u-soft-md u-bg-alpha">
+  
+   
+  
+    <div class="u-soft-md">
       <%= form_for [@cv,@experience] do |f| %>
       <div class="o-grid o-grid--gutter-md">
-        <div class="o-grid__item u-2/5">
+        <div class="o-grid__item u-2/5@md">
           
           <%= f.label :company, 'Company', class: "c-label" %>
           <%= f.text_field :company,  placeholder: "Apple Inc.", class: "c-text-input c-text-input--sm"%>
         
         </div>
-        <div class="o-grid__item u-1/5">
+        <div class="o-grid__item u-1/5@md">
           <%= f.label :start_date, 'Start Date', class: "c-label" %>
           <%= f.date_field :start_date, class: "c-text-input c-text-input--sm" %>
         </div>
-        <div class="o-grid__item u-1/5">
+        <div class="o-grid__item u-1/5@md">
           <%= f.label :end_date, 'End Date', class: "c-label" %>
           <%= f.date_field :end_date, class: "c-text-input c-text-input--sm" %>
         </div>
-        <div class="o-grid__item u-soft-top-md u-3/5">
+        <div class="o-grid__item u-soft-top-md u-3/5@md">
           <%= f.label :description, 'Description', class: "c-label" %>
           <%= f.text_area :description,  placeholder: "What you did at this job etc..", class: "c-text-input c-text-input--textarea" %>
         </div>
@@ -66,11 +69,15 @@
        <%= f.submit "Add Experience", class: "c-btn c-btn--alpha c-btn--sm u-no-underline" %>
     </div>
     <% end %>
+    <div class="u-push-bottom-md u-push-top-md">
+      <%= render 'table', table: @experiences %>
+    </div>  
   </div>
    <div id="panel-2" class="c-tabs__panel js-panel u-bg-shadow--sm u-bg-shadow--sm--hover" >
  
    <%= render 'form-user'%>
 
+ 
    </div>
   <% $i=2 %>
   <% while $i<6 %>

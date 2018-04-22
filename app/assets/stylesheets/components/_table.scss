@@ -34,7 +34,7 @@
   }
 
   .#{$nb-namespace}c-table__row:not(.#{$nb-namespace}c-table__header-row):nth-child(even) {
-    background-color: $nb-color-grey-v-light;
+    background-color: lighten($color-alpha,20%);
   }
 
   .#{$nb-namespace}c-table__row:nth-child(odd) {
