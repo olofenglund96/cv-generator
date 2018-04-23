@@ -62,6 +62,6 @@ class CvsController < ApplicationController
   end
 private
   def cv_params
-    params.require(:cv).permit(:first_name, :last_name, :email, :personal_letter, :experience, :cv_selector)
+    params.require(:cv).permit(:cv_name, :first_name, :last_name, :email, :personal_letter, :experience, :cv_selector)
   end
 end
