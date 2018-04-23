@@ -21,7 +21,13 @@ class CvsController < ApplicationController
     @cv = Cv.find(params[:id])
     @experiences = @cv.experiences
     @experience = @cv.experiences.build
+  end
 
+  def update
+    @cv = Cv.find(params[:id])
+    if @cv.update_attributes(cv_params)
+      redirect_to edit_cv_path(@cv) and return
+    end
   end
 
 
@@ -32,8 +38,10 @@ class CvsController < ApplicationController
 
   def get_pdf
     @cv = Cv.find(params[:id])
+    @template = 'cvs/pdf_templates/'+params[:cv_selector]+'_pdf.html.erb'
+    
     render pdf: 'test.pdf',
-           template: 'cvs/pdf.html.erb',
+           template: @template,
            margin:  {
              top: 0,
              bottom: 0,
@@ -54,6 +62,6 @@ class CvsController < ApplicationController
   end
 private
   def cv_params
-    params.require(:cv).permit(:first_name, :last_name, :email, :personal_letter, :experience)
+    params.require(:cv).permit(:first_name, :last_name, :email, :personal_letter, :experience, :cv_selector)
   end
 end

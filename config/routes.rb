@@ -4,6 +4,7 @@ devise_for :users
 get '/guide', to:'guide#index'
 get '/users', to:'users#index'
 
+
 resources :cvs do
   member do
     get :get_pdf
@@ -16,7 +17,7 @@ end
 resources :educations
 
 
-#resources :experiences
+
 
 root to: "welcome#index"
 
