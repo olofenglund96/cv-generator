@@ -4,19 +4,20 @@
 <div class="o-section-md">
 </div>
 <div class="o-section-md">
-  <div class="o-grid o-grid--gutter-md">
+  <%= form_tag({controller: "cvs", action: "get_pdf"}, method: "get" ) do %>
+  <div class="o-grid o-grid--gutter-md o-grid--bottom">
     <div class="o-grid__item u-1/4@md u-1/2@sm">
       <label for="country" class="c-label">Select Cv Template</label>
-      <select class="c-select c-select--sm" id="cv-template-select">
-        <option value="cv-olof">Olofs Cv</option>
-        <option value="cv-arvid">Arvids Cv</option>
-        <option value="cv-john">John's Cv</option>
+      <select name='cv_selector' class="c-select c-select--sm" id="cv-template-select">
+        <%= options_for_select([['Olofs Cv','olof'],['Arvids Cv','arvid'],['Johns CV','john']])%>
       </select>
     </div>
-    <!--
-    TODO: COLOR PICKER?
-    -->
+    <div class="o-grid__item u-1/3@md">
+      <%= button_to "Get PDF", class: "c-btn c-btn--alpha c-btn--sm u-no-underline" %>
+    </div>
+   
   </div>
+  <% end %>
 
 </div>
 <div class="o-section-md">
@@ -74,8 +75,8 @@
     </div>  
   </div>
    <div id="panel-2" class="c-tabs__panel js-panel u-bg-shadow--sm u-bg-shadow--sm--hover" >
- 
-   <%= render 'form-user'%>
+
+   <%= render 'form_user', form_user: @cv%>
 
  
    </div>
