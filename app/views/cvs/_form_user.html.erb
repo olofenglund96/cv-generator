@@ -1,4 +1,8 @@
 <%= form_for @cv do |f| %>
+     <div class="form-group">
+      <%= f.label :cv_name %>
+      <%= f.text_field :cv_name, class: "form-control" %>
+    </div>
     <div class="form-group">
       <%= f.label :first_name %>
       <%= f.text_field :first_name, class: "form-control" %>

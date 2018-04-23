@@ -2,6 +2,9 @@
 <%= render partial: "shared/user-header"%>
 <div class="o-site-wrap o-site-wrap--padding">
 <div class="o-section-md">
+
+<h1 class="c-text-presentation u-bg-shadow--sm"><%= @cv.cv_name %></h1>
+
 </div>
 <div class="o-section-md">
   <%= form_tag({controller: "cvs", action: "get_pdf"}, method: "get" ) do %>
@@ -13,7 +16,7 @@
       </select>
     </div>
     <div class="o-grid__item u-1/3@md">
-      <%= button_to "Get PDF", class: "c-btn c-btn--alpha c-btn--sm u-no-underline" %>
+      <%= button_to "Get PDF",{}, {class: "c-btn c-btn--beta c-btn--sm u-no-underline"} %>
     </div>
    
   </div>
