@@ -24,7 +24,15 @@
               </div>
             </a>
           </li>
+          <li class="c-navbar__item  c-navbar__item--reset-line-height">
+          <% if !user_signed_in? %>
+            <%= link_to "Sign up", new_user_registration_path, class: "c-btn c-btn--alpha c-btn--sm" %>
+          <%else%>
+            <%= link_to("Sign out", destroy_user_session_path, method: :delete, class:"c-btn c-btn--alpha c-btn--sm") %>
+          <%end%>  
+          </li>
         </ul>
+<<<<<<< HEAD
         <% if !user_signed_in? %>
         <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
           <li> <div class="c-navbar__item c-navbar__item--reset-line-height js-navbar-cta">
@@ -41,6 +49,9 @@
       </li>
         </ul>
         <ul class="c-navbar__content c-navbar__content--right c-navbar__content--keep-at-top">
+=======
+        <ul class="c-navbar__content c-navbar__content--right  c-navbar__content--keep-at-top">
+>>>>>>> Fixed login
           <li> <div class="c-navbar__item c-navbar__item--reset-line-height c-flyout js-navbar-cta" aria-haspopup="true" aria-expanded="true">
           <button class="c-btn c-btn--alpha c-btn--sm">Free premium CV</button>
           <div class="c-flyout__content c-flyout__content--se c-flyout__content--lg  c-flyout__content--transition ">
@@ -56,6 +67,7 @@
           </div>
         </div>
       </li>
+     
         </ul>
       </div>
     </nav>
