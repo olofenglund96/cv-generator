@@ -1,5 +1,6 @@
 class Cv
   include Mongoid::Document
+  field :cv_name
   field :first_name, type: String
   field :last_name, type: String
   field :email, type: String

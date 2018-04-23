@@ -1,0 +1,138 @@
+
+<!--<div class="c-cv">
+  <div class="c-cv__header">
+    <div class="left">
+    <h3><%= @cv.first_name + " " + @cv.last_name%></h3>
+    <img src="https://pbs.twimg.com/profile_images/378800000496622309/47ff3775534b9af99583b7622ec3f8fe_400x400.jpeg" width="130px" height="130px"alt="">
+      <ul>
+        <li><span style="font-weight:bold">First name: </span><%=@cv.first_name%></li>
+          <li><span style="font-weight:bold">Last name: </span><%=@cv.last_name%></li>
+          <li><span style="font-weight:bold">Email: </span><%= @cv.email%></li>
+        </ul>
+    </div>
+    <div class="right">
+    <h1 class="text-center"><%="CV of " + @cv.first_name+" "+@cv.last_name%></h1>
+    </div>
+    <div class="u-soft text-center">
+    <h2 class="text-center">Personal letter</h2>
+    <p><%= @cv.personal_letter%></p>
+    </div>
+  </div>
+</div>
+-->
+
+
+<!--->
+This should actually go in the header file, but doesn't work.
+<-->
+<%= wicked_pdf_stylesheet_link_tag('cv_styles_pdf/olof_pdf')-%>
+
+<meta charset="utf-8" /> 
+<!--->
+This should actually go in the header file, but doesn't work.
+<-->
+
+<div id="top">
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+		<%= wicked_pdf_image_tag "headshot.jpg" %>
+		</div>
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo"><%= @cv.first_name + " " + @cv.last_name %></h1>
+			<h2 class="quickFade delayThree">Job Title</h2>
+		</div>
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+				<li>email: <a href="mailto:joe@bloggs.com" target="_blank"><%= @cv.email %></a></li>
+				<li>w: <a href="http://www.bloggs.com">www.yourwebsite.com</a></li>
+				<li>m: 01234567890</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p><%= @cv.personal_letter%></p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+			<% @cv.experiences.each do |exp| %>
+				<article>
+					<h2> <%= exp.company %></h2>
+					<p class="subDetails"><%= exp.start_date.to_s + " to " + exp.end_date.to_s %></p>
+					<p><%= exp.description%></p>
+				</article>
+			<% end %>
+
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Key Skills</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+					<li>A Key Skill</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			<div class="sectionContent">
+			<% @cv.educations.each do |ed| %>
+				<article>
+					<h2><%=ed.school%></h2>
+					<p class="subDetails"><%=ed.subject%></p>
+					<p><%=ed.description%></p>
+				</article>
+				<% end %>
+				<%if @cv.educations.length < 2 #Show example of education%>
+				<article>
+					<h2>College/University</h2>
+					<p class="subDetails">Qualification</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+				</article>
+				<% end%>
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+	</div>
+</div>
+</div>
+</div>

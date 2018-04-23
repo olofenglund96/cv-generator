@@ -5,18 +5,16 @@ class ExperiencesController < ApplicationController
   end
   def new
     @cv = Cv.find(params[:cv_id])
-    @experience = Experience.new
+    @experience = Experience.new(:cv => @cv)
   end
 
   def create
     @cv = Cv.find(params[:cv_id])
     @experience= @cv.experiences.create(experience_params)
     if @experience.save
-      redirect_to cvs_path, notice: "The experience has been added" and return
-    else
-      redirect_to cvs_path, notice: "DIDNT WORK TO ADD EXPERIENCE!" and return
+      redirect_to request.referrer, notice: 'Experience added sucessfully'
     end
-  render 'new'
+
   end
   def show
     @cv = Cv.find(params[:cv_id])

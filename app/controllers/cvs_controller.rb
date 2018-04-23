@@ -6,15 +6,31 @@ class CvsController < ApplicationController
     
   def new
    @cv= Cv.new
+   @experience = Experience.new
   end
     
-  def create
+  def create  
     @cv= Cv.new(cv_params)
       if @cv.save
-        redirect_to cvs_path, notice: "The cv has been created!" and return
+        redirect_to edit_cv_path(@cv) and return
       end
     render 'new'
   end
+
+  def edit
+    @cv = Cv.find(params[:id])
+    @experiences = @cv.experiences
+    @experience = @cv.experiences.build
+  end
+
+  def update
+    @cv = Cv.find(params[:id])
+    if @cv.update_attributes(cv_params)
+      redirect_to edit_cv_path(@cv) and return
+    end
+  end
+
+
 
   def show
     @cv = Cv.find(params[:id])
@@ -22,8 +38,10 @@ class CvsController < ApplicationController
 
   def get_pdf
     @cv = Cv.find(params[:id])
+    @template = 'cvs/pdf_templates/'+params[:cv_selector]+'_pdf.html.erb'
+    
     render pdf: 'test.pdf',
-           template: 'cvs/pdf.html.erb',
+           template: @template,
            margin:  {
              top: 0,
              bottom: 0,
@@ -31,6 +49,9 @@ class CvsController < ApplicationController
              right: 0
           },
           header: { html: { template: 'cvs/_header.pdf.html.erb'}}
+  end
+  def add_experience
+
   end
 
   def destroy
@@ -41,6 +62,6 @@ class CvsController < ApplicationController
   end
 private
   def cv_params
-    params.require(:cv).permit(:first_name, :last_name, :email, :personal_letter, :experience)
+    params.require(:cv).permit(:cv_name, :first_name, :last_name, :email, :personal_letter, :experience, :cv_selector)
   end
 end

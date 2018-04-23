@@ -1,42 +1,12 @@
 <%= render partial: "shared/menu" %>
 <%= render partial: "shared/user-header"%>
 <div class="o-site-wrap o-site-wrap--padding">
-<div class="o-section-md">
-</div>
-<div class="o-section-md">
-  <div class="o-grid o-grid--gutter-md">
-    <div class="o-grid__item u-1/4">
-      <label for="country" class="c-label">Select Cv Template</label>
-      <select class="c-select c-select--sm" id="cv-template-select">
-        <option value="cv-olof">Olofs Cv</option>
-        <option value="cv-arvid">Arvids Cv</option>
-        <option value="cv-john">John's Cv</option>
-      </select>
-    </div>
-    <!--
-    TODO: COLOR PICKER?
-    -->
-  </div>
+<div class="u-soft-top-md">
+  <h1>New Cv </h1>
+  <p>Let's get going. Add the first basic info and we'll take it from there. This info will be displayed in your CV, but it can be updated later</p>
 
-</div>
-<div class="o-section-md">
-<div class="c-tabs">
-  <div class="c-tabs__list-wrapper">
-    <div class="c-tabs__list" role="tablist">
-      <button class="c-tabs__tab js-form-tab is-active" data-panel="panel-1">Tab 1</button>
-      <button class="c-tabs__tab js-form-tab" data-panel="panel-2">Tab 2</button>
-      <button class="c-tabs__tab js-form-tab" data-panel="panel-3">Tab 3</button>
-      <button class="c-tabs__tab js-form-tab " data-panel="panel-4" >Tab 4</button>
-      <button class="c-tabs__tab js-form-tab" data-panel="panel-5">Tab 5</button>
-    </div>
+  <div class="u-bg-shadow--sm u-bg-shadow--sm--hover u-soft-md">
+    <%= render 'form_user' %>
   </div>
-
-  <div id="panel-1" class="c-tabs__panel js-panel is-visible" ><%= render "form-user" %></div>
-  <% $i=1 %>
-  <% while $i<6 %>
-  <div id="panel-<%=$i%>" class="c-tabs__panel js-panel" >Panel <%=$i%> Content</div>
-  <% $i=$i+1 %>
-  <% end %>
-</div>
 </div>
 </div>
