@@ -11,7 +11,7 @@
   
   transform: scale(0.75);
 }
-t-center{
+.u-text-center{
   text-align: center;
 }
 
@@ -50,5 +50,8 @@ t-center{
 }
 .u-bg-alpha{
   background-color: $color-alpha !important;
+}
+.u-bg-delta{
+  background-color: $color-delta !important;
 }
 
