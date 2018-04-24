@@ -1,17 +1,28 @@
-<div class="col-md-6 col-md-offset-3 col-xs-12 reg-page">
-  <div class="headline">
-    <h2><%= t('devise.sign_up') %></h2>
-  </div>
-  <%= simple_form_for(resource, as: resource_name,
-                                url: registration_path(resource_name)) do |f| %>
-    <%= f.input :first_name, required: true %>
-    <%= f.input :last_name, required: true %>
-    <%= f.input :email, required: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
 
-    <%= f.button :submit, id: 'user-submit' %>
-    <hr>
-    <%= render 'devise/shared/links' %>
+
+
+<%= render partial: "shared/menu" %>
+<%= render partial: "shared/user-header"%>
+<div class="o-site-wrap o-site-wrap--padding">
+<div class="u-soft-top-md u-2/3@md u-margin-auto">
+  <h2>Sign up</h2>
+  <div class="u-bg-shadow--sm u-bg-shadow--sm--hover u-soft-md">
+ 
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "c-btn c-btn--beta c-btn--sm u-no-underline" %>
+      <%= link_to "Log in?", new_session_path(resource_name), class: "btn btn-default" %>
+  </div>
   <% end %>
+  </div>
+
+</div>
 </div>

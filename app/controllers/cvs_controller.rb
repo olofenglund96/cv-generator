@@ -6,11 +6,12 @@ class CvsController < ApplicationController
     
   def new
    @cv= Cv.new
-   @experience = Experience.new
+   @user = User.find(current_user)
   end
     
   def create  
     @cv= Cv.new(cv_params)
+    @user = User.find(current_user)
       if @cv.save
         redirect_to edit_cv_path(@cv) and return
       end
@@ -19,6 +20,7 @@ class CvsController < ApplicationController
 
   def edit
     @cv = Cv.find(params[:id])
+    @user = User.find(current_user)
     @experiences = @cv.experiences
     @experience = @cv.experiences.build
   end

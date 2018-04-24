@@ -3,7 +3,7 @@
     <button class="c-navbar__overlay" aria-hidden="true" tabIndex="0"></button>
     <nav class="c-navbar__wrap" role="navigation">
       <button class="c-navbar__toggle" aria-hidden="true" tabIndex="0"><span class="c-navbar__toggle-bars"></span></button>
-      <a href= '<%= cvs_path(@cv) %>' class="c-navbar__logo" style="width:100px">
+      <a href= '<%= root_path %>' class="c-navbar__logo" style="width:100px">
        <%= image_tag "cv-logo.png"%>
       </a>
       <div class="c-navbar__content-wrapper">
@@ -24,31 +24,14 @@
               </div>
             </a>
           </li>
-          <li class="c-navbar__item  c-navbar__item--reset-line-height">
-          <% if !user_signed_in? %>
-            <%= link_to "Sign up", new_user_registration_path, class: "c-btn c-btn--alpha c-btn--sm" %>
-          <%else%>
-            <%= link_to("Sign out", destroy_user_session_path, method: :delete, class:"c-btn c-btn--alpha c-btn--sm") %>
-          <%end%>  
-          </li>
         </ul>
         <ul class="c-navbar__content c-navbar__content--right  c-navbar__content--keep-at-top">
-          <li> <div class="c-navbar__item c-navbar__item--reset-line-height c-flyout js-navbar-cta" aria-haspopup="true" aria-expanded="true">
-          <button class="c-btn c-btn--alpha c-btn--sm">Free premium CV</button>
-          <div class="c-flyout__content c-flyout__content--se c-flyout__content--lg  c-flyout__content--transition ">
-            <div class="c-card">
-              <div class="c-card__body--sm js-navbar-cta__popup">
-                <p class="u-font-size-xxs u-txt-italic u-lineheight-sm">Yeah that's right! Subscribe to our newsletter here and we will send you a key to one of our freshest CV:s.</p>                      
-                <input type="email" class="c-text-input c-text-input--xs" id="name" placeholder="name@gmail.com" />
-                <div class="u-soft-top-sm u-text-center">
-                  <button class="c-btn c-btn--alpha c-btn--sm u-font-size-xxs u-margin-auto">Subscribe</button>
-                </div>              
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-     
+          <li class="c-navbar__item c-navbar__item--reset-line-height js-navbar-cta" aria-haspopup="true" aria-expanded="true">
+             <%= render "shared/sign_up"%>
+          </li>
+          <li class="c-navbar__item c-navbar__item--reset-line-height js-navbar-cta" aria-haspopup="true" aria-expanded="true">
+             <%= render "shared/log_in"%>
+          </li>
         </ul>
       </div>
     </nav>

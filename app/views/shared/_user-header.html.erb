@@ -1,9 +1,11 @@
 <div class="u-bg-alpha o-site-padding">
   <div class="o-site-wrap">
     <div class="c-user-header">
+    <% if user_signed_in? %>
     <div class="c-user-header__img-container">
       <%= image_tag('headshot.jpg', height:"130", width:"130") %>
     </div>
+    <%end%>
     </div>
   </div>
 </div>
