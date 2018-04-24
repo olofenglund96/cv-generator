@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+
 devise_for :users
 get '/guide', to:'guide#index'
-get '/users', to:'users#index'
 
+
+get '/users' => "cvs#index", as: :user_root
 
 resources :cvs do
   member do
