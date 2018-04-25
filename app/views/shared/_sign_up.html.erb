@@ -1,5 +1,5 @@
  <% if !user_signed_in? %>
             <%= link_to "Sign up", new_user_registration_path, class: "c-btn c-btn--alpha c-btn--sm" %>
           <%else%>
-            <%= link_to("Sign out", destroy_user_session_path, method: :delete, class:"c-btn c-btn--alpha c-btn--sm") %>
-          <%end%>  
+            <%= button_to("Sign out", destroy_user_session_path, method: :delete, class:"c-btn c-btn--alpha c-btn--sm") %>
+          <%end%>

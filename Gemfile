@@ -56,6 +56,7 @@ gem 'wicked_pdf'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'rails_serve_static_assets'
-gem "cancan"
+gem 'cancancan', '~> 2.0'
+gem 'cancancan-mongoid'
 gem "devise"
 gem 'bcrypt', '~> 3.1.11'

@@ -1,15 +1,14 @@
 class CvsController < ApplicationController
-  
   def index
     @cvs = Cv.all
   end
-    
+
   def new
    @cv= Cv.new
    @user = User.find(current_user)
   end
-    
-  def create  
+
+  def create
     @cv= Cv.new(cv_params)
     @user = User.find(current_user)
       if @cv.save
@@ -41,7 +40,7 @@ class CvsController < ApplicationController
   def get_pdf
     @cv = Cv.find(params[:id])
     @template = 'cvs/pdf_templates/'+params[:cv_selector]+'_pdf.html.erb'
-    
+
     render pdf: 'test.pdf',
            template: @template,
            margin:  {
