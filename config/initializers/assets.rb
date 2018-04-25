@@ -18,6 +18,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 #Am: Precompile neccesary for pipeline to work.
 
 Rails.application.config.assets.precompile += ['cv_styles_pdf/olof_pdf.css']
+Rails.application.config.assets.precompile += ['cv_styles_pdf/arvid_pdf.css']
 
 
 #Regex to only precompile scss files without underscore under, eg. 'nebula-css.scss' will be compiled but not '_settings.scss'. Ruby on rails asset pipeline looks
