@@ -218,7 +218,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.11)
   bson_ext
   byebug
-  cancancan (~> 2.0)
+  cancancan
   cancancan-mongoid
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
