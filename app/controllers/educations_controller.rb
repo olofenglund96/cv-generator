@@ -1,5 +1,5 @@
 class EducationsController < ApplicationController
- 
+
 
   # GET /educations
   # GET /educations.json
@@ -29,14 +29,10 @@ class EducationsController < ApplicationController
     @cv = Cv.find(params[:cv_id])
     @education = @cv.educations.create(education_params)
 
-    respond_to do |format|
-      if @education.save
-        format.html { redirect_to cvs_path, notice: 'Education was successfully created.' }
-        format.json { render :show, status: :created, location: @education }
-      else
-        format.html { render :new }
-        format.json { render json: @education.errors, status: :unprocessable_entity }
-      end
+    if @education.save
+      redirect_to request.referrer, notice: 'Education added sucessfully'
+    else
+      redirect_to request.referrer, notice: 'Failed to add education'
     end
   end
 

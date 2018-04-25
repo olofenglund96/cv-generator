@@ -14,9 +14,10 @@ resources :cvs do
 end
 resources :cvs do
   resources :experiences
+  resources :educations
 end
 
-resources :educations
+
 
 
 
