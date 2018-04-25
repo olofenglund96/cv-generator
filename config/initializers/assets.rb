@@ -15,7 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 
 
-#Am: Precompile neccesary for pipeline to work.
+#Am: Precompile neccesary for pipeline to work. Don't append .scss to end of file name. 
 
 Rails.application.config.assets.precompile += ['cv_styles_pdf/olof_pdf.css']
 Rails.application.config.assets.precompile += ['cv_styles_pdf/arvid_pdf.css']
