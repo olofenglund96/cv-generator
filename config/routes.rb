@@ -5,7 +5,7 @@ devise_for :users
 get '/guide', to:'guide#index'
 
 
-get '/cvs' => "cvs#index", as: :user_root
+get '/user/cvs' => "cvs#index", as: :user_root
 
 resources :cvs do
   member do
@@ -15,6 +15,9 @@ end
 resources :cvs do
   resources :experiences
   resources :educations
+end
+resources :users do
+  resources :cvs
 end
 
 

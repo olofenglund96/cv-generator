@@ -50,9 +50,6 @@ GEM
     bson_ext (1.5.1)
     builder (3.2.3)
     byebug (10.0.0)
-    cancancan (2.2.0)
-    cancancan-mongoid (2.0.0.beta1)
-      cancancan (~> 2.0)
     capybara (2.18.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -218,8 +215,6 @@ DEPENDENCIES
   bcrypt (~> 3.1.11)
   bson_ext
   byebug
-  cancancan
-  cancancan-mongoid
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise

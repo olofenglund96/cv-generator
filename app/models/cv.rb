@@ -7,6 +7,7 @@ class Cv
   field :personal_letter, type: String
   embeds_many :experiences
   embeds_many :educations
+  embedded_in :user
   accepts_nested_attributes_for :educations
   accepts_nested_attributes_for  :experiences
 end

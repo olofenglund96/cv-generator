@@ -1,24 +1,27 @@
 # frozen_string_literal: true
 
 class CvsController < ApplicationController
-  load_and_authorize_resource
 
   def index; end
 
   def new
     @user = current_user
+    @cv = Cv.new
   end
 
   def create
-    @cv = Cv.new(cv_params)
+    #@cv = Cv.new(cv_params)
     @user = User.find(current_user)
-    redirect_to(edit_cv_path(@cv)) && return if @cv.save
+    @cv = @user.cvs.build(cv_params)
+    redirect_to(edit_user_cv_path(@user,@cv)) && return if @cv.save!
     render 'new'
   end
 
   def edit
-    @cv = Cv.find(params[:id])
     @user = current_user
+    @cv = @user.cvs.find(params[:id])
+
+    
     @experiences = @cv.experiences
     @experience = @cv.experiences.build
   end
