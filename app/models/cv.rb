@@ -5,6 +5,8 @@ class Cv
   field :last_name, type: String
   field :email, type: String
   field :personal_letter, type: String
+  #Field related to styling
+  field :cv_selector, type: String, default:"olof"
   embeds_many :experiences
   embeds_many :educations
   embedded_in :user

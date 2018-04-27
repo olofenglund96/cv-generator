@@ -2,7 +2,10 @@
 
 class CvsController < ApplicationController
 
-  def index; end
+  def index
+    @user = current_user
+    @cvs = @user.cvs
+  end
 
   def new
     @user = current_user
@@ -36,8 +39,14 @@ class CvsController < ApplicationController
   end
 
   def get_pdf
-    @cv = Cv.find(params[:id])
-    @template = 'cvs/pdf_templates/' + params[:cv_selector] + '_pdf.html.erb'
+    @user = current_user
+    @cv = @user.cvs.find(params[:id])
+    #This request can be sent from option chooser on edit page, but if it doesn't exist we use default value.
+    if params.has_key?(:cv_selector)
+      @cv.cv_selector = params[:cv_selector]
+    end
+    @selector = @cv.cv_selector
+    @template = 'cvs/pdf_templates/' + @selector + '_pdf.html.erb'
 
     render pdf: 'test.pdf',
            template: @template,

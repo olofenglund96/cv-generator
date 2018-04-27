@@ -1,3 +1,4 @@
+$height: 340px;
 .c-cv-display-card{
   /* __Use to make hover scale-up on view, add cv-card-shrink to application.js__
   transform: scale(1) translate3d(0px,0px,1px);
@@ -19,7 +20,7 @@
     display:block;
     
     &--empty{
-      height: 340px;
+      height: $height;
       width: 100%;
       background-color: $color-alpha;
       transition: background-color 0.3s;
@@ -34,6 +35,7 @@
        
       }
     }
+  
   }
   &__overlay{
     position: absolute;

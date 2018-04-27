@@ -1,5 +1,6 @@
 <div class="u-bg-alpha o-site-padding">
   <div class="o-site-wrap">
+  <a href="<%= user_cvs_path(@user) %>">
     <div class="c-user-header">
     <% if user_signed_in? %>
     <div class="c-user-header__img-container">
@@ -7,5 +8,6 @@
     </div>
     <%end%>
     </div>
+    </a>
   </div>
 </div>
