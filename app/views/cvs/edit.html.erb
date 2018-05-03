@@ -49,11 +49,14 @@
     <% if flash[:notice] %>
       <div class="alert alert-success"><%= flash[:notice] %></div>
     <% end %>
+     <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
 
 
 
     <div class="u-soft-md">
-      <%= form_for [@cv,@experience] do |f| %>
+      <%= form_for [@user,@cv,@experience], controller: "experiences", method:"create" do |f| %>
       <div class="o-grid o-grid--gutter-md">
         <div class="o-grid__item u-2/5@md">
 

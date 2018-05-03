@@ -17,7 +17,9 @@ resources :cvs do
   resources :educations
 end
 resources :users do
-  resources :cvs
+  resources :cvs do
+    resources :experiences
+  end
 end
 
 
