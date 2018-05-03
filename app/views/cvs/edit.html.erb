@@ -99,7 +99,7 @@
 
 
     <div class="u-soft-md">
-      <%= form_for [@cv,@cv.educations.build] do |f| %>
+      <%= form_for [@user,@cv,@education], controller: "educations", method:"create" do |f| %>
       <div class="o-grid o-grid--gutter-md">
         <div class="o-grid__item u-2/5@md">
 
@@ -128,7 +128,7 @@
     </div>
     <% end %>
     <div class="u-push-bottom-md u-push-top-md">
-      <%= render 'table', table: [@educations] %>
+      <%= render 'table_educations', table_educations: [@educations] %>
     </div>
   </div>
   <% $i=4 %>

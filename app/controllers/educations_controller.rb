@@ -26,8 +26,9 @@ class EducationsController < ApplicationController
   # POST /educations
   # POST /educations.json
   def create
-    @cv = Cv.find(params[:cv_id])
-    @education = @cv.educations.create(education_params)
+    @user = current_user
+    @cv = @user.cvs.find(params[:cv_id])
+    @education = @cv.educations.build(education_params)
 
     if @education.save
       redirect_to request.referrer, notice: 'Education added sucessfully'

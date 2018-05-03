@@ -12,13 +12,11 @@ resources :cvs do
     get :get_pdf
   end
 end
-resources :cvs do
-  resources :experiences
-  resources :educations
-end
+
 resources :users do
   resources :cvs do
     resources :experiences
+    resources :educations
   end
 end
 
